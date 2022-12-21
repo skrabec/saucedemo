@@ -1,2 +1,4 @@
-package pages;public class CheckoutStepTwoPage {
+package pages;
+
+public class CheckoutStepTwoPage {
 }

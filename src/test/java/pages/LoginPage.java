@@ -4,10 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage {
+public class LoginPage extends PageBase{
 
     @FindBy(xpath = "//input[@placeholder='Username']")
     private WebElement usernameTextBox;
@@ -15,24 +13,19 @@ public class LoginPage {
     @FindBy(xpath = "//input[@placeholder='Password']")
     private WebElement passwordTextBox;
 
-    @FindBy(xpath = "//input[@value='LOGIN']")
+    @FindBy(xpath = "//*[@id='login-button']")
     private WebElement loginButton;
 
-    public WebDriver driver;
-    public static String url = "https://www.saucedemo.com/";
-
-    public static LoginPage visitPage(WebDriver driver) {
-        LoginPage page = new LoginPage(driver);
-        page.visitPage();
-        return page;
-    }
-
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
+    public LoginPage(WebDriver driver){
+        super(driver);
+        driver.get(url);
         PageFactory.initElements(driver, this);
     }
 
-    public void visitPage() {
-        this.driver.get(url);
+    public InventoryPage enterUsernamePassword(String username, String password) {
+        usernameTextBox.sendKeys(username);
+        passwordTextBox.sendKeys(password);
+        loginButton.click();
+        return PageFactory.initElements(driver, InventoryPage.class);
     }
 }

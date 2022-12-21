@@ -12,7 +12,7 @@ public class TestBase {
     @Before
     public void setUp() {
         System.setProperty("webdriver.chrome.whitelistedIps", "");
-        WebDriverManager.firefoxdriver().setup();
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }

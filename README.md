@@ -15,7 +15,8 @@
 **Framework for automation:**
 
 ![Selenium](https://img.shields.io/badge/-selenium-%43B02A?style=for-the-badge&logo=selenium&logoColor=white)
-![Serenity](https://img.shields.io/badge/-JUnit-16a67a?style=for-the-badge&logo=Junit&logoColor=black)
+![JUnit](https://img.shields.io/badge/-JUnit-16a67a?style=for-the-badge&logo=Junit&logoColor=black)
+![Hamcrest](https://img.shields.io/badge/-Hamcrest-16a67a?style=for-the-badge&logo=Junit&logoColor=black)
 
 ## 🏎️ How to Run all Test Scenarios
 
